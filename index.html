@@ -11,33 +11,35 @@
 <body>
     <main>
         <form>
-            <div class="campo-label">
-                <label for="email">Email:</label>
-                <input type="email" placeholder="Digite seu email" />
+            <div class="tamanho-dos-campos">
+                <div class="campo-label">
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="Digite seu email" />
+                </div>
+                <div class="campo-label">
+                    <label for="senha">Senha:</label>
+                    <input type="password" placeholder="Digite sua senha" />
+                </div>
             </div>
-            <div>
-                <label for="senha">Senha:</label>
-                <input type="password" placeholder="Digite sua senha" />
-            </div>
-
-            <button>Entrar</button>
+            <button onclick="enviarInformacoes(event)">Entrar</button>
         </form>
     </main>
 </body>
-<script>  
+<script>
     // JAVASCRIPT
-        let email = document.getElementById("email");
-        let senha = document.getElementById("senha");
-     
-        function enviarInformacoes(event){
-            let emailDigitado = email.value;
-            let senhaDigitado = senha.value;
-     
-            console.log(emailDigitado);
-            console.log(senhaDigitado);
-     
-            event.preventDefault();
-        }
+    let email = document.getElementById("email");
+    let senha = document.getElementById("senha");
+
+    function enviarInformacoes(event) {
+        let emailDigitado = email.value;
+        let senhaDigitado = senha.value;
+
+        console.log(emailDigitado);
+        console.log(senhaDigitado);
+
+        event.preventDefault();
+    }
+
 </script>
 <style>
     body {
@@ -60,37 +62,54 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        border-radius: 5%;
     }
-
+    .tamanho-dos-campos{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     .campo-label {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 2%;
+        
+
     }
 
     label {
         color: white;
         font-size: 25px;
         font-family: Arial, Helvetica, sans-serif;
+
+
     }
 
     input {
         width: 450px;
+        max-width: 100%;
         height: 30px;
         border-radius: 8px;
         border: none;
         margin-top: 8px;
         font-size: 12px;
     }
-    button{
+
+    button {
         background-color: black;
         width: 20%;
         height: 10%;
         border: none;
         border-radius: 30px;
         cursor: pointer;
-        color:white;
-        font-weight: bolder ;
+        color: white;
+        font-weight: bolder;
+        margin-top: 10px;
+        transition: all 0.5s;
+    }
+    button:hover{
+        color: red;
     }
 </style>
 
